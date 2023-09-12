@@ -12,6 +12,7 @@ namespace Application
     {
         public static IServiceCollection AddApplicationServices(this IServiceCollection services)
         {
+            services.AddAutoMapper(Assembly.GetExecutingAssembly());//git assemblydeki mevcut çalışan her şeyin doğru seçim olduğunu
             services.AddMediatR(configuration =>
             {
                 configuration.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly());//mediatr git bütün assemblyleri tara oarada commendleri bul onların handlerlarını bul, birbiriyle eşleştir listele koy, send yaparsam onun handlerını çalıştır.

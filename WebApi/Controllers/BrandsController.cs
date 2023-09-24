@@ -12,7 +12,7 @@ namespace WebApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class BrandsController : BaseController
+    public class BrandsController : BaseController//mediatr vs her seferinde enjekte etme
     {
         [HttpPost]
         public async Task<IActionResult> Add([FromBody]CreateBrandCommand createBrandCommand)

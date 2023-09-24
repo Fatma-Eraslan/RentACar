@@ -26,6 +26,10 @@ namespace Persistence.EntityConfigurations
 
             //builder.HasMany(b => b.Models);
 
+            builder.HasIndex(indexExpression:b=>b.Name, name:"UK_Brands_Name").IsUnique();
+
+            builder.HasMany(b => b.Models);
+
             builder.HasQueryFilter(b => !b.DeletedDate.HasValue);
         }
     }

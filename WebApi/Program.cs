@@ -21,6 +21,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+//if(app.Environment.IsProduction())//hatayý detaylý þekilde ver developmant için sistem bilgisi
 app.ConfigureCustomExceptionMiddleware();//bütün hatalarý yaptýðýmýz middlewareden geçsin
 
 app.UseHttpsRedirection();

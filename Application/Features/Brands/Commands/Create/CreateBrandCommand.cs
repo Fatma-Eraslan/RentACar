@@ -28,7 +28,7 @@ namespace Application.Features.Brands.Commands.Create
                 _brandBusinessRules = brandBusinessRules;
             }
 
-            public async Task<CreatedBrandResponse> Handle(CreateBrandCommand request, CancellationToken cancellationToken)
+            public async Task<CreatedBrandResponse>? Handle(CreateBrandCommand request, CancellationToken cancellationToken)
             {
                 await _brandBusinessRules.BrandNameCannotBeDuplicatedWhenInserted(request.Name);//hata yönetimi
 

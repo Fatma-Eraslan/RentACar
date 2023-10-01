@@ -1,4 +1,6 @@
-﻿using Core.Application.Rules;
+﻿using Core.Application.Pipelines.Validation;
+using Core.Application.Rules;
+using FluentValidation;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
@@ -17,9 +19,13 @@ public static class ApplicationServiceRegistration//program.cs de yapmak yerine 
 
         services.AddSubClassesOfType(Assembly.GetExecutingAssembly(),typeof(BaseBusinessRules)); //kullanımı
 
+        services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
+
         services.AddMediatR(configuration =>
         {
             configuration.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly());//mediatr git bütün assemblyleri tara oarada commendleri bul onların handlerlarını bul, birbiriyle eşleştir listele koy, send yaparsam onun handlerını çalıştır.
+
+            configuration.AddOpenBehavior(typeof(RequestValidationBehavior<,>));
         });
         return services;    
     }

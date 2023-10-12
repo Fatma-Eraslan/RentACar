@@ -41,9 +41,9 @@ namespace Application.Features.Brands.Commands.Create
 
                 await _brandRepository.AddAsync(brand);
 
-                Brand brand2 = _mapper.Map<Brand>(request);                
-                brand2.Id = Guid.NewGuid();
-                await _brandRepository.AddAsync(brand2);
+                //Brand brand2 = _mapper.Map<Brand>(request);                
+                //brand2.Id = Guid.NewGuid();
+                //await _brandRepository.AddAsync(brand2); iki tane ekleyince aynı isimde hata veriyor ve ikisinide ekletmiyor
 
                //var result=await _brandRepository.AddAsync(brand);
 

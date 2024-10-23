@@ -18,6 +18,12 @@ namespace Application.Features.Brands.Queries.GetList
     {
         public PageRequest PageRequest { get; set; }
 
+        public string CacheKey => $"GetListBrandQuery({PageRequest.PageIndex},{PageRequest.PageSize})";
+
+        public bool BypassCache { get; }
+
+        public TimeSpan? SlidingExpiration { get; }
+
         public class GetListBrandQueryHandler : IRequestHandler<GetListBrandQuery, GetListResponse<GetListBrandListItemDto>>
         {
             private readonly IBrandRepository _brandRepository;

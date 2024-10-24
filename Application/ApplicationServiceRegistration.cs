@@ -33,6 +33,8 @@ public static class ApplicationServiceRegistration//program.cs de yapmak yerine 
             configuration.AddOpenBehavior(typeof(TransactionScopeBehavior<,>));
 
             configuration.AddOpenBehavior(typeof(CachingBehavior<,>));
+
+            configuration.AddOpenBehavior(typeof(CacheRemovingBehavior<,>));
         });
         return services;    
     }

@@ -14,7 +14,7 @@ using System.Threading.Tasks;
 
 namespace Application.Features.Brands.Queries.GetList
 {
-    public class GetListBrandQuery : IRequest<GetListResponse<GetListBrandListItemDto>>,ICachableRequest
+    public class GetListBrandQuery : IRequest<GetListResponse<GetListBrandListItemDto>>, ICachableRequest
     {
         public PageRequest PageRequest { get; set; }
 
@@ -23,6 +23,8 @@ namespace Application.Features.Brands.Queries.GetList
         public bool BypassCache { get; }
 
         public TimeSpan? SlidingExpiration { get; }
+
+        public string? CacheGroupKey => "GetBrands";
 
         public class GetListBrandQueryHandler : IRequestHandler<GetListBrandQuery, GetListResponse<GetListBrandListItemDto>>
         {

@@ -41,7 +41,8 @@ public static class ApplicationServiceRegistration//program.cs de yapmak yerine 
             configuration.AddOpenBehavior(typeof(LogginBehavior<,>));
         });
 
-        services.AddSingleton<LoggerServiceBase, FileLogger>();//hangi  loglama sistemini kullanacağımızı belirtiyoruz.
+        /*  services.AddSingleton<LoggerServiceBase, FileLogger>();*///hangi  loglama sistemini kullanacağımızı belirtiyoruz.
+        services.AddSingleton<LoggerServiceBase, MsSqlLogger>();
 
         return services;    
     }

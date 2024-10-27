@@ -8,6 +8,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 builder.Services.AddApplicationServices();
 builder.Services.AddPersistenceServices(builder.Configuration);
+builder.Services.AddHttpContextAccessor();//log
 
 //builder.Services.AddDistributedMemoryCache();//in memory (yayýnladýðýmýz ortamýn belleðinde çalýþýyor.)
 builder.Services.AddStackExchangeRedisCache(opt => opt.Configuration = "localhost:6379");

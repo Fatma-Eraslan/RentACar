@@ -26,13 +26,13 @@
 
   <ItemGroup>
     <Reference Include="Core.Application">
-      <HintPath>..\..\RentACar-Core.Packages\Core.Application\bin\Debug\net7.0\Core.Application.dll</HintPath>
+      <HintPath>..\..\..\corePackages\Core.Packages\Core.Application\bin\Debug\net7.0\Core.Application.dll</HintPath>
     </Reference>
     <Reference Include="Core.CrossCuttingConcerns">
-      <HintPath>..\..\RentACar-Core.Packages\Core.CrossCuttingConcerns\bin\Debug\net7.0\Core.CrossCuttingConcerns.dll</HintPath>
+      <HintPath>..\..\..\corePackages\Core.Packages\Core.Application\bin\Debug\net7.0\Core.CrossCuttingConcerns.dll</HintPath>
     </Reference>
     <Reference Include="Core.Persistence">
-      <HintPath>..\..\RentACar-Core.Packages\Core.Application\bin\Debug\net7.0\Core.Persistence.dll</HintPath>
+      <HintPath>..\..\..\corePackages\Core.Packages\Core.Application\bin\Debug\net7.0\Core.Persistence.dll</HintPath>
     </Reference>
   </ItemGroup>
 
